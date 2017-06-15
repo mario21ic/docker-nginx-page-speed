@@ -1,0 +1,11 @@
+version: "2"
+services:
+  nginx:
+    image: mario21ic/nginx:pagespeed
+    build:
+      context: .
+    volumes:
+      - ./logs/nginx:/var/log/nginx/
+    ports:
+      - 8080:80
+    command: nginx -g 'daemon off;'
